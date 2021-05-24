@@ -9,8 +9,8 @@
 
 .banner__contents {
   margin-left: 30px;
-  padding-top: 40vh;
-  height: 22vh;
+  padding-top: 30vh;
+  height: 60vh;
 }
 
 .banner__title {
@@ -50,11 +50,23 @@
 }
 
 .banner--fadeBottom {
-  height: 8rem;
+  height: 15vh;
   background-image: linear-gradient(
     180deg,
     transparent,
     rgba(29, 28, 28, 0.98),
     #111
   );
+}
+
+@media (max-width: 560px) {
+  .banner__contents {
+    padding-top: 50vh;
+  }
+  .banner__description {
+    display: none;
+  }
+  .banner__title {
+    font-size: 1rem;
+  }
 }

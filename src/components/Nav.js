@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
+import AuthContext from "../store/authContext";
 
 import "./Nav.css";
 
-function Nav() {
+function Nav(props) {
   const [show, setShow] = useState(false);
 
   useEffect(() => {
@@ -12,23 +13,49 @@ function Nav() {
       } else setShow(false);
     });
     return () => {
-      window.removeEventListener("scroll");
+      window.removeEventListener("scroll", () => {
+        console.log("hello");
+      });
     };
   }, []);
+
+  const profileHandler = () => {
+    props.onShow();
+  };
+
+  const ctx = useContext(AuthContext);
 
   return (
     <div className={`nav ${show && "nav__black"}`}>
       <img
-        className="nav__logo"
+        className="nav__logo item"
         src="https://www.freepnglogos.com/uploads/netflix-logo-0.png"
         alt="Netflix logo"
+        onClick={props.hidefav}
       ></img>
-
-      <img
-        className="nav__avatar"
-        src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png"
-        alt="Netflix Avatar"
-      ></img>
+      {ctx.isLoggedIn && (
+        <span className="item hide" onClick={props.showfav}>
+          My List
+        </span>
+      )}
+      {ctx.isLoggedIn && (
+        <img
+          style={{ float: "right" }}
+          className="nav__avatar item"
+          src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png"
+          alt="Netflix Avatar"
+          onClick={props.onPrf}
+        ></img>
+      )}
+      {!ctx.isLoggedIn && (
+        <span
+          className="item"
+          style={{ float: "right" }}
+          onClick={profileHandler}
+        >
+          LogIn
+        </span>
+      )}
     </div>
   );
 }

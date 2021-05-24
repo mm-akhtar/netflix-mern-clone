@@ -2,32 +2,70 @@
   position: fixed;
   top: 0;
   width: 100%;
-  padding: 20px;
-  height: 24px;
+  /* padding: 20px; */
+  /* height: 55px; */
   z-index: 1;
 
-  display: flex;
-  justify-content: space-between;
+  /* display: flex;
+  justify-content: space-between; */
 
   transition-timing-function: ease-in;
   transition: all 0.5s;
+  background-image: linear-gradient(360deg, transparent, rgba(22, 22, 22, 0.9));
 }
 
 .nav__black {
   background-color: #111;
-  opacity: 0.9;
+  opacity: 0.98;
 }
 
 .nav__logo {
-  position: fixed;
+  /* position: fixed; */
   left: 20px;
-  width: 80px;
+  width: 120px;
   object-fit: contain;
+  /* padding: 14px 16px; */
+  padding-top: 10px;
 }
 
 .nav__avatar {
-  position: fixed;
-  right: 20px;
-  width: 30px;
+  /* position: fixed; */
+  padding-top: 0;
+  /* right: 20px; */
+  width: 60px;
   object-fit: contain;
+}
+
+/* .nav__left {
+  display: flex;
+  justify-content: space-between;
+} */
+
+/* .navbar {
+  overflow: hidden;
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  width: 100%;
+} */
+
+.nav .item {
+  cursor: pointer;
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.nav .item:hover {
+  color: rgb(177, 2, 2);
+}
+
+@media only screen and (max-width: 560px) {
+  .nav .hide {
+    display: none;
+  }
 }

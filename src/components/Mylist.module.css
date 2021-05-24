@@ -1,0 +1,43 @@
+.list__posters {
+  display: flex;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+.list__posters::-webkit-scrollbar {
+  display: none;
+}
+
+.list__posterLarge {
+  object-fit: contain;
+  display: block;
+  max-height: 280px;
+  max-width: 280px;
+  margin-right: 4px;
+  transition: transform 450ms;
+  border-radius: 0.3rem;
+}
+
+.list__posters p {
+  margin-right: 4px;
+  cursor: pointer;
+  text-align: center;
+  color: white;
+  margin-bottom: 10px;
+  background-color: rgb(80, 16, 16);
+  border-radius: 0.2rem;
+}
+
+@media only screen and (max-width: 560px) {
+  .list__posterLarge {
+    height: 140px;
+  }
+  .list__posters p {
+    font-size: 0.5rem;
+  }
+}

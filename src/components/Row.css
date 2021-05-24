@@ -1,7 +1,8 @@
 .row {
   margin-left: 20px;
   color: white;
-  /* background-color: #111; */
+  animation: row-appear 1s ease-out forwards;
+  scroll-behavior: smooth;
 }
 .row__posters {
   display: flex;
@@ -9,29 +10,84 @@
   overflow-y: hidden;
   overflow-x: scroll;
   padding: 20px;
+  scroll-behavior: smooth;
 }
 
 .row__posters::-webkit-scrollbar {
   display: none;
 }
 
-.row__poster {
-  object-fit: contain;
-  width: 100%;
-  max-height: 140px;
-  /* max-width: 200px; */
+@keyframes row-appear {
+  from {
+    opacity: 0;
+    transform: translateX(3rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.hs__header {
+  display: flex;
+  justify-content: space-between;
+}
+.hs__arrows {
+  align-self: center;
+  margin-right: 20px;
+}
+.hs__arrows .arrow:before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  content: "";
+  background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNSIgaGVpZ2h0PSI5IiB2aWV3Qm94PSIwIDAgMTUgOSI+Cgk8cGF0aCBmaWxsPSIjMzMzMzMzIiBkPSJNNy44NjcgOC41NzRsLTcuMjItNy4yMi43MDctLjcwOEw3Ljg2NyA3LjE2IDE0LjA1Ljk4bC43MDYuNzA3Ii8+Cjwvc3ZnPgo=");
+  background-size: contain;
+  filter: brightness(5);
+  width: 18px;
+  height: 12px;
+  cursor: pointer;
+}
+.hs__arrows .arrow.disabled:before {
+  filter: brightness(2);
+}
+.hs__arrows .arrow.arrow-prev:before {
+  transform: rotate(90deg);
   margin-right: 10px;
-  transition: transform 450ms;
+}
+.hs__arrows .arrow.arrow-next:before {
+  transform: rotate(-90deg);
 }
 
-.row__poster:hover {
-  transform: scale(1.1);
+@media only screen and (min-width: 990px) {
+  .hs__wrapper {
+    overflow: hidden;
+  }
+}
+@media (hover: none) and (pointer: coarse) {
+  .hs__wrapper .hs__arrows {
+    display: none;
+  }
+  .hs__wrapper .hs__item {
+    flex: 1 0 calc(23% - 10px * 2);
+  }
+}
+@media only screen and (hover: none) and (pointer: coarse) and (max-width: 990px) {
+  .hs__wrapper .hs__item {
+    flex: 1 0 calc(45% - 10px * 2);
+  }
 }
 
-.row__posterLarge {
-  max-height: 280px;
-}
-
-.row__posterLarge:hover {
-  transform: scale(1.11);
+@media (max-width: 560px) {
+  .hs__headline {
+    font-size: small;
+  }
+  .hs__arrows {
+    display: none;
+  }
+  .row__posters {
+    padding: 5px;
+    padding-bottom: 10px;
+  }
 }

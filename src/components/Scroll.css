@@ -1,0 +1,44 @@
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  height: auto;
+  margin-right: 10px;
+  transition: transform 450ms;
+  border-radius: 10rem;
+}
+
+.image {
+  object-fit: contain;
+  display: block;
+  max-height: 140px;
+  max-width: 280px;
+  margin-right: 4px;
+  transition: transform 450ms;
+  border-radius: 0.3rem;
+}
+
+.container:hover {
+  transform: scale(1.1);
+}
+
+.container:hover .overlay {
+  opacity: 1;
+}
+
+.row__posterLarge {
+  object-fit: contain;
+  max-height: 280px;
+}
+
+@media screen and (max-width: 560px) {
+  .image {
+    width: 100px;
+  }
+  .row__posterLarge {
+    max-width: 140px;
+  }
+}
