@@ -1,5 +1,5 @@
 .row {
-  margin-left: 20px;
+  margin-left: 1rem;
   color: white;
   animation: row-appear 1s ease-out forwards;
   scroll-behavior: smooth;
@@ -80,6 +80,10 @@
 }
 
 @media (max-width: 560px) {
+  .row {
+    margin-left: 0.5rem;
+    margin-bottom: 1rem;
+  }
   .hs__headline {
     font-size: small;
   }

@@ -31,14 +31,23 @@
 
 .row__posterLarge {
   object-fit: contain;
+  display: block;
   max-height: 280px;
+  max-width: 280px;
+  margin-right: 4px;
+  transition: transform 450ms;
+  border-radius: 0.3rem;
 }
 
 @media screen and (max-width: 560px) {
   .image {
-    width: 100px;
+    max-height: 140px;
+    max-width: 180px;
   }
   .row__posterLarge {
-    max-width: 140px;
+    max-height: 180px;
+  }
+  .container:hover {
+    transform: scale(1);
   }
 }

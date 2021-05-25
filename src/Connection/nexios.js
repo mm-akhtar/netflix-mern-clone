@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const instance = axios.create({
-  baseURL: "https://akhtar-netflix-api.herokuapp.com",
+  baseURL: process.env.Base_URL,
 });
 
 export default instance;
