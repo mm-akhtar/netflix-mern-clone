@@ -35,7 +35,7 @@ function Nav(props) {
       ></img>
       {ctx.isLoggedIn && (
         <span className="item hide" onClick={props.showfav}>
-          Testing CI/CD
+          My List
         </span>
       )}
       {ctx.isLoggedIn && (

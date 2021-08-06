@@ -41,7 +41,7 @@ function Banner({ showfav }) {
         <div className="banner__buttons">
           <button className="banner__button">Play</button>
           <button className="banner__button" onClick={showfav}>
-            My List
+            CI CD TESTING
           </button>
         </div>
         <h1 className="banner__description">
